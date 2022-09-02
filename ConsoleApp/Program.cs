@@ -6,10 +6,26 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Year to check (if leap): ");
+            string input = Console.ReadLine();
+            Console.WriteLine(YayOrNay(input));
         }
 
-        public bool IsLeapYear(int year)
+        public static string YayOrNay(string input)
+        {
+            int yearToCheck;
+            bool isNumeric = int.TryParse(input, out yearToCheck);
+            if (IsLeapYear(yearToCheck))
+            {
+                return "yay";
+            }
+            else
+            {
+                return "nay";
+            }
+        }
+        
+        public static bool IsLeapYear(int year)
         {
             if (year % 4 == 0)
             {
