@@ -15,7 +15,7 @@ namespace ConsoleApp
         {
             int yearToCheck;
             bool isNumeric = int.TryParse(input, out yearToCheck);
-            if (IsLeapYear(yearToCheck))
+            if (isNumeric && IsLeapYear(yearToCheck))
             {
                 return "yay";
             }
@@ -27,7 +27,7 @@ namespace ConsoleApp
         
         public static bool IsLeapYear(int year)
         {
-            if (year % 4 == 0)
+            if (year >= 1582 && year % 4 == 0)
             {
                 if (year % 100 == 0 && year % 400 != 0)
                 {
