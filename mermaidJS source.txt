@@ -1,0 +1,12 @@
+graph TD
+    A("IsLeapYear(int year)") -->|"year < 1582"| B(False)
+    A --> |"year >= 1582"| C("year % 4")
+    C --> |"remainder != 0"| B
+    C --> |"remainder = 0"| D("year % 100")
+    D --> |"remainder != 0"| E(True)
+    D --> |"remainder = 0"| F("year % 400")
+    F --> |"remainder != 0"| B
+    F --> |"remainder = 0"| E
+
+style B fill:#bd7d89
+style E fill:#a0d494

@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+
+\begin{document}
+\begin{center}
+\Huge
+    IsLeapYear documentation
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{IsLeapYear-adjusted.png}
+    \caption{Logic flow for IsLeapYear()}
+    \label{fig:grade}
+\end{figure}
+The specified requirements for determining whether or not a year is a leap year are: the year must be equal to or greater than 1582, the year must be divisible by 4, and finally if the year is divisible by 100 it MUST also be divisble by 400 to be a leap year.
+
+The implemented algorithm first checks for the 1582 requirement, and will immediately return false if it fails - if it doesn't, it will then move on to check if divisible by 4.
+
+If the tested number is divisible by four, then it will check if the number is also divisible by 100 - if it isn't, then the number must be a leapyear and we return true. If, however, it is divisible, then we also check that it stays divisible by 400, if this is the case, then we return true - else, we return false.
+
+\end{document}
